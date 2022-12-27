@@ -58,15 +58,10 @@ class AdminOperations:
 		id = input("\nEnter FoodID for the item you want to remove: ")
 		item = self.search_by_FoodID(id)
 		if item:
-			# self.item_lst.remove(item)
-			del item
-			print("\nItem deleted successfully!\n")
-		else:
-			print("\nItem not found.\n")
+			self.item_lst.remove(item)
+			return "\nItem deleted successfully!\n"
 
 	def search_by_FoodID(self,id):
 		for item in self.item_lst:
 			if item.get_FoodID() == id:
 				return item
-			else:
-				return None
